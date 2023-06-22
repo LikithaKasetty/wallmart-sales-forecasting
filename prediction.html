@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Health Expense</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<div class ='container'>
+<h1>
+    Prediction of weekly sales of Walmart
+</h1>
+<form action="{{ url_for('predict')}}" method = 'POST'>
+    <div>
+        <input placeholder = 'CPI' value = "{{feature_one}}" name = 'feature1'></input>
+    </div>
+    <div>
+        <input placeholder = 'Revenue' value = "{{feature_two}}" name = 'feature2'></input>
+    </div>
+    <div>
+        <input placeholder = 'Store' value = "{{feature_three}}" name = 'feature3'></input>
+    </div>
+    <div>
+        <input placeholder = 'Fuel_price' value = "{{feature_four}}" name = 'feature4'></input>
+    </div>
+    <p>{{prediction_text}}</p>
+    <button class = 'btn btn-warning'>Predict</button>
+</form>
+</div>
+</body>
